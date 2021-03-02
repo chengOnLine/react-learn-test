@@ -26,6 +26,22 @@
     -->
     <title>React App</title>
   </head>
+  <script>
+    var a = 1000;
+    var obj = {
+        a: 1,
+          b: this.a + 1
+    }
+    function fun() {
+        var obj = {
+              a: 1,
+            c: this.a + 2 //严格模式下这块报错 Cannot read property 'a' of undefined
+        }
+        return obj.c;
+    }
+    console.log(fun());//1002
+    console.log(obj.b);//1001
+  </script>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
