@@ -4,15 +4,19 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import MainRouter from "./router";
+import {store } from "./redux/store";
 
-ReactDOM.render(
-  <React.StrictMode>
-    <MainRouter />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+store.subscribe(()=>console.log(store.getState()))
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+const render = ()=>{
+  ReactDOM.render(
+    <React.StrictMode>
+      <MainRouter />
+    </React.StrictMode>,
+    document.getElementById('root')
+  ); 
+}
+render();
+store.subscribe(render)
+store.dispatch({type:"updateUser" , username:"李林城"})
 reportWebVitals();
