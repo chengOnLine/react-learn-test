@@ -5,18 +5,16 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import MainRouter from "./router";
 import {store } from "./redux/store";
-
+import 'antd/dist/antd.css';
 store.subscribe(()=>console.log(store.getState()))
-
 const render = ()=>{
   ReactDOM.render(
     <React.StrictMode>
-      <MainRouter />
+        <MainRouter />
     </React.StrictMode>,
     document.getElementById('root')
   ); 
 }
 render();
 store.subscribe(render)
-store.dispatch({type:"updateUser" , username:"李林城"})
 reportWebVitals();
