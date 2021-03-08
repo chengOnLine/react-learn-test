@@ -3,6 +3,7 @@ import Say from "./test/say";
 import Validate from "./test/validate";
 import Redux from "./test/redux";
 import Context from "./test/context";
+import ReactRedux from "./test/react-redux";
 import {Provider} from "../context";
 
 class Home extends React.Component{
@@ -32,6 +33,7 @@ class Home extends React.Component{
             <Validate/>
             <Redux/>
             <Context />
+            <ReactRedux />
         </Provider>
     }
 }
