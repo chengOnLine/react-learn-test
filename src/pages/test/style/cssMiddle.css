@@ -1,0 +1,208 @@
+
+.content{
+    background-color: rgb(223, 223, 223);
+}
+
+.parent{
+    width:100%;
+    padding: 10px;
+    border: 5px solid black;
+    background-color: chocolate;
+}
+
+.son{
+    padding: 10px;
+    border: 5px solid black;
+    background-color: cadetblue;
+}
+
+.grandson{
+    width: 300px;
+    padding: 10px;
+    border: 5px solid black;
+    background-color: cornsilk;
+}
+
+/* 已知宽度(水平居中) */
+/* #son{
+    width: 500px;
+    margin: 0 auto;
+} */
+
+/* 已知宽度，parent定位属性为relative （垂直水平居中）*/
+/* #parent{
+    position: relative;
+}
+#son{
+    width: 500px;
+    height: 200px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -250px;
+    margin-top: -100px;
+        left:calc(50% - 250px);
+        top:calc(50% - 100px);
+} */
+
+/* 未知宽高 */
+/* #parent{
+    position: relative;
+}
+#son{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50% , -50%);
+} */
+
+/* 未知宽高 */
+/* #parent{
+    position: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+  /* .outer_wrapper {
+    margin: 0 10px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+  .inner_wrapper{
+    background: red;
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 50%;
+  }
+  .box{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+  } */
+
+  .box {
+    margin: auto 0;
+    width: 100px;
+    height: 100px;
+    background: red;
+    /* font-size: 40px; */
+    line-height: 100px;
+    color: #fff;
+    text-align: center;
+  }
+
+  .div1 {
+    margin: 0 auto;
+  }
+
+  .div2 {
+    margin-left: 50%;
+    background: green;
+    float: left;
+    transform: translateX(-100%);
+  }
+
+  .div3 {
+    background: blue;
+    float: left;
+    transform: translateX(-100%);
+  }
+
+  /* .header,
+    .footer {
+      height: 40px;
+      width: 100%;
+      background: red;
+    }
+    .container{
+      overflow: hidden;
+    }
+
+    .middle {
+      background: yellow;
+    }
+
+    .left {
+      float: left;
+      width: 200px;
+      background: pink;
+    }
+
+    .right {
+      float: right;
+      width: 250px;
+      background: aqua;
+    } */
+
+    /* .header,
+    .footer {
+      height: 40px;
+      width: 100%;
+      background: red;
+    }
+
+    .footer {
+      clear: both;
+    }
+
+    .container {
+      padding-left: 200px;
+      padding-right: 250px;
+    }
+
+    .container div {
+      position: relative;
+      float: left;
+    }
+
+    .middle {
+      width: 100%;
+      background: yellow;
+    }
+
+    .left {
+      width: 200px;
+      background: pink;
+      margin-left: calc(-100% - 200px);
+    }
+
+    .right {
+      width: 250px;
+      background: aqua;
+      margin-left: -250px;
+      left: 250px; 
+    } */
+
+    /* 双飞翼布局 */
+    .container {
+        min-width: 600px;
+    }
+    .left {
+        float: left;
+        width: 200px;
+        height: 400px;
+        background: red;
+        margin-left: -100%;
+    }
+    .center {
+        float: left;
+        width: 100%;
+        height: 500px;
+        background: yellow;
+    }
+    .center .inner {
+        margin: 0 200px; 
+    }
+    .right {
+        float: left;
+        width: 200px;
+        height: 400px;
+        background: blue;
+        margin-left: -200px;
+    }

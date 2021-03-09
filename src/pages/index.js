@@ -4,6 +4,8 @@ import Validate from "./test/validate";
 import Redux from "./test/redux";
 import Context from "./test/context";
 import ReactRedux from "./test/react-redux";
+import CssMiddle from "./test/cssMiddle";
+
 import {Provider} from "../context";
 
 class Home extends React.Component{
@@ -29,11 +31,12 @@ class Home extends React.Component{
     }
     render(){
         return <Provider value={this.getContext()}>
-            <Say/>
+            {/* <Say/>
             <Validate/>
             <Redux/>
             <Context />
-            <ReactRedux />
+            <ReactRedux /> */}
+            <CssMiddle />
         </Provider>
     }
 }
