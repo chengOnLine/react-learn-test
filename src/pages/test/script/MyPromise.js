@@ -178,22 +178,22 @@ MyPromise.prototype.finally = function( onFinally ){
 export default MyPromise;
 
 
-    MyPromise.resolve().then(() => {
-        console.log(0);
-        return MyPromise.resolve(4);
-        // return 4;
-    }).then((res) => {
-        console.log(res)
-    })
+    // MyPromise.resolve().then(() => {
+    //     console.log(0);
+    //     return MyPromise.resolve(4);
+    //     // return 4;
+    // }).then((res) => {
+    //     console.log(res)
+    // })
 
-    MyPromise.resolve().then(() => {
-        console.log(1);
-    }).then(() => {
-        console.log(2);
-    }).then(() => {
-        console.log(3);
-    }).then(() => {
-        console.log(5);
-    }).then(() =>{
-        console.log(6);
-    })
+    // MyPromise.resolve().then(() => {
+    //     console.log(1);
+    // }).then(() => {
+    //     console.log(2);
+    // }).then(() => {
+    //     console.log(3);
+    // }).then(() => {
+    //     console.log(5);
+    // }).then(() =>{
+    //     console.log(6);
+    // })

@@ -5,7 +5,8 @@ import Redux from "./test/redux";
 import Context from "./test/context";
 import ReactRedux from "./test/react-redux";
 import CssMiddle from "./test/cssMiddle";
-
+import MyPromise from "./test/script/MyPromise";
+import TearJSByHand from "./test/script/TearJSByHand";
 import {Provider} from "../context";
 
 class Home extends React.Component{
