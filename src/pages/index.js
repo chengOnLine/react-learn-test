@@ -8,6 +8,7 @@ import CssMiddle from "./test/cssMiddle";
 import MyPromise from "./test/script/MyPromise";
 import TearJSByHand from "./test/script/TearJSByHand";
 import {Provider} from "../context";
+import { Button } from "_antd@4.13.0@antd";
 
 class Home extends React.Component{
     constructor(props){
@@ -30,14 +31,31 @@ class Home extends React.Component{
             }
         }
     }
+    handleRouteJumpClick = (type)=>{
+        const {fruit} = this.state;
+        if(type === "params"){
+            this.props.history.push({pathname:"/route/"+fruit});
+        }else if(type === "query"){
+            this.props.history.push({pathname:"/route" , query:{queryName:fruit }});
+        }else if(type === "state"){
+            this.props.history.push({pathname:"/route" , state:{stateName:fruit }});
+        }else if(type = "search"){
+            this.props.history.push({pathname:"/route" , search:`searchName=${fruit}`});
+        }
+    }
     render(){
         return <Provider value={this.getContext()}>
-            {/* <Say/>
-            <Validate/>
-            <Redux/>
+            {/* <Say/> */}
+            {/* <Validate/> */}
+            {/* <Redux/> */}
             <Context />
-            <ReactRedux /> */}
-            <CssMiddle />
+            {/* <ReactRedux /> */}
+            {/* <CssMiddle /> */}
+            <Button onClick={()=>this.handleRouteJumpClick("params")}>params跳转</Button>
+            <Button onClick={()=>this.handleRouteJumpClick("query")}>query跳转</Button>
+            <Button onClick={()=>this.handleRouteJumpClick("state")}>state跳转</Button>
+            <Button onClick={()=>this.handleRouteJumpClick("search")}>search跳转</Button>
+            
         </Provider>
     }
 }
