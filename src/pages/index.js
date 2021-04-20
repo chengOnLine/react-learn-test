@@ -55,7 +55,9 @@ class Home extends React.Component{
             <Button onClick={()=>this.handleRouteJumpClick("query")}>query跳转</Button>
             <Button onClick={()=>this.handleRouteJumpClick("state")}>state跳转</Button>
             <Button onClick={()=>this.handleRouteJumpClick("search")}>search跳转</Button>
-            
+            <div dangerouslySetInnerHTML={{__html:"<span style=color:red>这是渲染的 HTML 内容</span>"}}></div>
+            {/* xss攻击 */}
+            <div dangerouslySetInnerHTML={{__html:"<script type=text/javascript src='./script/MyPromise.js'>console.log('Hello')</script>"}}></div> 
         </Provider>
     }
 }

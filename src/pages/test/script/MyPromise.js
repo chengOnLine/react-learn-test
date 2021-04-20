@@ -177,7 +177,7 @@ MyPromise.prototype.finally = function( onFinally ){
 }
 export default MyPromise;
 
-
+console.log("Mypromise")
     // MyPromise.resolve().then(() => {
     //     console.log(0);
     //     return MyPromise.resolve(4);
