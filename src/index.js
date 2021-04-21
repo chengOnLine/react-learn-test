@@ -10,11 +10,10 @@ import 'antd/dist/antd.css';
 store.subscribe(()=>console.log(store.getState()))
 const render = ()=>{
   ReactDOM.render(
-    <React.StrictMode>
+    // <React.StrictMode>
       <Provider store={store}>
         <MainRouter />
-      </Provider>
-    </React.StrictMode>,
+      </Provider>,
     document.getElementById('root')
   ); 
 }

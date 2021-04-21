@@ -1,5 +1,6 @@
 import React from "react";
 import {store} from "../../redux/store";
+import ItemBox from "../../components/itemBox";
 // const {getState , dispatch } = store;
 class ReduxTest extends React.Component{
     constructor(props){
@@ -11,9 +12,9 @@ class ReduxTest extends React.Component{
         const {username , phone } = userInfo || {};
         const {greeting} = baseInfo || {};
         console.log(store.getState())
-        return <>
+        return <ItemBox title="redux">
             <div>{`${greeting} , I'm ${username}. My phone number is ${phone}`}</div>
-        </>
+        </ItemBox>
     }
 }
 export default ReduxTest;

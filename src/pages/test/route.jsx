@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from 'prop-types';
+import ItemBox from "../../components/itemBox";
 class Route extends React.Component{
 
     // 默认props，默认值也会进行类型检查
@@ -25,8 +26,7 @@ class Route extends React.Component{
         const {query = {} , search , state = {}} = location;
         const {queryName  = "--"} = query;
         const {stateName = "--"} = state;
-        return <div>
-            <h3>路由接收参数方式</h3>
+        return <ItemBox title="路由跳转及传参方式">
             <div>
                 {`paramsName: ${ paramsName }`}
             </div>
@@ -47,7 +47,7 @@ class Route extends React.Component{
                 <p>3.query：在HashRouter和BrowserRouter路由中刷新页面参数都会丢失</p>
                 <p>4.query和 state 可以传对象</p>
             </div>
-        </div>
+        </ItemBox>
     }
 }
 

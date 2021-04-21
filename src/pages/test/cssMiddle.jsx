@@ -39,10 +39,10 @@ class Middle extends React.Component{
                 </div>
                 <div class="footer">这里是底部</div> */}
 
-            <h1>双飞翼布局</h1>
+            {/* <h1>双飞翼布局</h1> */}
                 <article class="container">
                 <div class="center">
-                    <div class="inner">双飞翼布局</div>
+                    <div class="inner"></div>
                 </div>
                 <div class="left"></div>
                 <div class="right"></div>

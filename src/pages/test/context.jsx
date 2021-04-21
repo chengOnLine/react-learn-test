@@ -1,5 +1,6 @@
 import React from "react";
 import {Consumer} from "../../context";
+import ItemBox from "../../components/itemBox";
 import {Button} from "antd";
 class ContextTest extends React.Component{
     constructor(props){
@@ -9,7 +10,7 @@ class ContextTest extends React.Component{
     render(){
         console.log("context" , this.context)
         return <>
-            <div>
+            <ItemBox title="context">
                 <Consumer>
                 {
                     (context)=>{
@@ -22,7 +23,7 @@ class ContextTest extends React.Component{
                     }
                 }
                 </Consumer>
-            </div>
+            </ItemBox>
         </>
     }
 }
