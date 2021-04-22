@@ -48,7 +48,12 @@ const navConfig = {
                 {
                     title:"react apis",
                     key:'/api/react',
+                },
+                {
+                    title:"hooks",
+                    key:"/api/hooks",
                 }
+
             ]
         },
     ]

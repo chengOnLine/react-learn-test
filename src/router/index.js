@@ -2,7 +2,7 @@ import React from "react";
 import { HashRouter, Route, Switch } from "react-router-dom";
 import Main from "../pages/main";
 import MyRoute from "../pages/test/route";
-import ReactAPI from "../pages/test/reactAPIs";
+import ReactAPI from "../pages/reactAPIs";
 export default () => (
   <HashRouter>
     <Switch>

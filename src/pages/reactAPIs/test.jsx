@@ -1,4 +1,5 @@
 import React from "react";
+import ItemBox from "../../components/itemBox";
 class Test extends React.Component{
     constructor(props){
         super(props);
@@ -15,9 +16,9 @@ class Test extends React.Component{
     }
     render(){
         const {count} = this.state;
-        return <div>
-            i am test count:{count}
-        </div>
+        return <ItemBox title="test">
+            count: {count}
+        </ItemBox>
     }
 }
 
