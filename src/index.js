@@ -9,7 +9,9 @@ import {Provider} from "react-redux";
 import 'antd/dist/antd.css';
 store.subscribe(()=>console.log(store.getState()))
 const render = ()=>{
-  const callback = (...arg) => console.log(arg)
+  const callback = (...arg) => {
+    // console.log(arg)
+  }
   ReactDOM.render(
     // <React.StrictMode>
     <Profiler id="root" onRender={ callback }>

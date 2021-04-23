@@ -1,6 +1,83 @@
-import React , {useRef , useLayoutEffect} from "react";
+import React , {useRef , useState , useEffect , useMemo , useLayoutEffect} from "react";
+import {
+    Button
+} from "antd";
 import ItemBox from "../../components/itemBox";
 import UseImperativeHandle from "./useImperativeHandle";
+
+function delay() {
+    let i=0;
+    while(i <= 1000000000) {
+        i++;
+    };
+}
+
+function TestEffect(props) {
+    const box = useRef();
+    const msg = useRef("hello world")
+    const [state, setState] = useState(0)
+    useEffect( ()=>{
+        console.log("msg",msg)
+        delay();
+        if(state === 12){
+            setState(2);
+        }
+    } , [state])
+
+    return <div style={{ height:"100px"}}>
+            0 - 12 - 2
+            <h1>{state}</h1>
+            <Button onClick={()=> setState(12)}>set 12</Button>
+        </div>
+}
+
+function TestLayoutEffect(props) {
+    const box = useRef();
+    const [state, setState] = useState(0)
+
+    useLayoutEffect( ()=>{
+        // console.log("layouteffect")
+        delay();
+        if(state === 12){
+            setState(2);
+        }
+    } , [state]);
+
+    return  <div style={{ height:"100px"}}>
+            0 - 2
+          <h1>{state}</h1>
+            <Button onClick={()=> setState(12)}>set 12</Button>
+            <Button onClick={()=> setState(0)}>reset</Button>
+    </div>
+}
+
+const DemoUseMemo=()=>{
+    const [ number ,setNumber ] = useState(0)
+    const [ count , setCount] = useState(0);
+    const newLog = useMemo(()=>{
+        const log =()=>{
+            /* 点击span之后 打印出来的number 不是实时更新的number值 */
+            console.log(number)
+        }
+        return log
+      /* [] 没有 number */  
+    },[count])
+    return <div>
+        <span style={{color:"red"}}>useMemo让函数在某个依赖项改变的时候才运行，这可以避免很多不必要的开销（这里要注意⚠️⚠️⚠️的是如果被useMemo包裹起来的上下文,形成一个独立的闭包，会缓存之前的state值,如果没有加相关的更新条件，是获取不到更新之后的state的值的，如下边👇⬇️）</span>
+        <br/>
+        number:{number} 
+        <br/>
+        count:{count}
+        <br/>
+        <Button onClick={()=>newLog()} >用useMemo缓存起来的 打印</Button>
+        <Button onClick={()=>console.log(number)} >未缓存的 打印</Button>
+        <Button onClick={ ()=> setNumber( number + 1 )  } >增加number</Button>
+        <Button onClick={ ()=> setCount( (count) => count+1 )  } >刷新useMemo</Button>
+        
+    </div>
+}
+
+
 class ReactAPI extends React.Component{
     constructor(props){
         super(props);
@@ -24,10 +101,12 @@ class ReactAPI extends React.Component{
             <ItemBox title="useEffect">
                 useEffect可以弥补函数组件没有生命周期的缺点。我们可以在useEffect第一个参数回调函数中，做一些请求数据，事件监听等操作，第二个参数作为dep依赖项，当依赖项发生变化，重新执行第一个函数。
                 useEffect可以用作事件监听，还有一些基于dom的操作。,别忘了在useEffect第一个参数回调函数，返一个函数用于清除事件监听等操作。
+                <TestEffect></TestEffect>
             </ItemBox>
-            <ItemBox title="useMemo">
-                useMemo接受两个参数，第一个参数是一个函数，返回值用于产生保存值。 第二个参数是一个数组，作为dep依赖项，数组里面的依赖项发生变化，重新执行第一个函数，产生新的值。
+            <ItemBox title="useMemo (小而香而性能优异)">
+                useMemo接受两个参数，第一个参数是一个函数，返回值用于产生保存值。 第二个参数是一个数组，作为dep依赖项，数组里面的依赖项发生变化，重新执行第一个函数，产生新的值。useMemo返回值就是经过判定更新的结果
                 应用场景： 1 缓存一些值，避免重新执行上下文； 2 减少不必要的dom循环； 3 减少子组件渲染
+                <DemoUseMemo />
             </ItemBox>
             <ItemBox title="useCallback">
                 useMemo 和 useCallback 接收的参数都是一样，都是在其依赖项发生变化后才执行，都是返回缓存的值，区别在于 useMemo 返回的是函数运行的结果， useCallback 返回的是函数。 返回的callback可以作为props回调函数传递给子组件。
@@ -36,11 +115,15 @@ class ReactAPI extends React.Component{
                 useRef的作用：
                 一 是可以用来获取dom元素，或者class组件实例 。
                 二 react-hooks原理文章中讲过，创建useRef时候，会创建一个原始对象，只要函数组件不被销毁，原始对象就会一直存在，那么我们可以利用这个特性，来通过useRef保存一些数据。
+
+                const msg = useRef("Hello World");
+                msg = current: "Hello World"
             </ItemBox>
             <ItemBox title="useLayoutEffect">
                 useEffect执行顺序: 组件更新挂载完成 - 浏览器 dom 绘制完成 - 执行 useEffect 回调。
                 useLayoutEffect 执行顺序: 组件更新挂载完成 - 执行 useLayoutEffect 回调- 浏览器dom绘制完成。
                 所以说 useLayoutEffect 代码可能会阻塞浏览器的绘制 。我们写的 effect和 useLayoutEffect，react在底层会被分别打上PassiveEffect，HookLayout，在commit阶段区分出，在什么时机执行。
+               <TestLayoutEffect />
             </ItemBox>
             <ItemBox title="useReduced">
                 在react-hooks原理那篇文章中讲解到，useState底层就是一个简单版的useReducer

@@ -7,7 +7,7 @@ function ItemBox(props) {
         html = "",
     } = props; 
     
-    return <div style={{border:"2px solid #FAFAFA" , padding:"10px" , marginBottom:"10px"}} {...props}>
+    return <div style={{height:"auto" , border:"2px solid #FAFAFA" , padding:"10px" , marginBottom:"10px"}} {...props}>
         <h2>{title}</h2>
         <p>{detail}</p>
         <div style={{backgroundColor:"cyan"}} dangerouslySetInnerHTML = {{__html:html}}></div>
