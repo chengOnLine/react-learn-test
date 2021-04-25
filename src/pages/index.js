@@ -18,6 +18,9 @@ class Home extends React.Component{
             fruit:"apple",
         }
     }   
+    componentDidMount(){
+        
+    }
     getContext = ()=>{
         return {
             ...this.state,
@@ -58,6 +61,7 @@ class Home extends React.Component{
             <div dangerouslySetInnerHTML={{__html:"<span style=color:red>这是渲染的 HTML 内容</span>"}}></div>
             {/* xss攻击 */}
             <div dangerouslySetInnerHTML={{__html:"<script type=text/javascript src='./script/MyPromise.js'>console.log('Hello')</script>"}}></div> 
+
         </Provider>
     }
 }

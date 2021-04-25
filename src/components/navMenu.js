@@ -16,6 +16,10 @@ const navConfig = {
                 {
                     title:"双飞翼布局",
                     key:'/layout/test1',
+                },
+                {
+                    title:"clientXScreenXPageX",
+                    key:"/layout/clientXScreenXPageX"
                 }
             ]
         },

@@ -5,9 +5,11 @@ import ReactAPI from "../pages/reactAPIs";
 import Hooks from "../pages/hooks";
 import CssMiddle from "../pages/test/cssMiddle";
 import Communication from "../pages/communication";
+import ClientXScreenXPageX from "../pages/test/clientXScreenXPageX";
 export default () => (
     <Switch>
       <Route exact path="/layout/test1" component={CssMiddle}></Route>
+      <Route exact path="/layout/clientXScreenXPageX" component={ClientXScreenXPageX}></Route>
       <Route exact path="/communication" component={Communication}></Route>
       <Route exact path="/communication/route/:paramsName" component={MyRoute}></Route>
       <Route exact path="/communication/route" component={MyRoute}></Route>

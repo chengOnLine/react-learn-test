@@ -5,7 +5,7 @@ import MainRoute from "../router/main";
 function Main(props) {
 
     return <React.Fragment>
-        <div className="navBar" style={{width:"100%" , height:"80px" , position:"fixed" , top:"0" , left:"0"}}>
+        <div className="navBar" style={{width:"100%" , height:"80px" , position:"fixed" , top:"0" , left:"0" , zIndex:1000}}>
             <MenuBar />
         </div>
         <div className="slide" style={{width:"250px" , height:"100%" , position:"fixed" , top:"80px" , left:"0" , backgroundColor:"#FAFAFA"}}>

@@ -6,6 +6,7 @@ import ReactRedux from "../test/react-redux";
 import {Provider} from "../../context";
 import { Button } from "_antd@4.13.0@antd";
 import ItemBox from "../../components/itemBox";
+import axios from "axios";
 class Home extends React.Component{
     constructor(props){
         super(props);
@@ -39,6 +40,14 @@ class Home extends React.Component{
             this.props.history.push({pathname:"/communication/route" , search:`searchName=${fruit}`});
         }
     }
+    fetchData = ()=>{
+        axios.get("http://localhost:8080").then(res => {
+            console.log("res" , res);
+        }).catch(e=>{
+            console.log("error" ,e);
+        })
+    }
+
     render(){
         return <Provider value={this.getContext()}>
             <Redux/>
@@ -49,6 +58,9 @@ class Home extends React.Component{
                 <Button style={{marginRight:15}} onClick={()=>this.handleRouteJumpClick("query")}>query跳转</Button>
                 <Button style={{marginRight:15}} onClick={()=>this.handleRouteJumpClick("state")}>state跳转</Button>
                 <Button style={{marginRight:15}} onClick={()=>this.handleRouteJumpClick("search")}>search跳转</Button>
+            </ItemBox>
+            <ItemBox title="axios">
+                <Button onClick={()=>{this.fetchData()}}>axios</Button>
             </ItemBox>
         </Provider>
     }
