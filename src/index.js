@@ -7,6 +7,16 @@ import MainRouter from "./router";
 import {store } from "./redux/store";
 import {Provider} from "react-redux";
 import 'antd/dist/antd.css';
+import axios from "axios";
+
+// 添加响应拦截器
+axios.interceptors.response.use(function (response) {
+    console.log("response" , response)
+    return response.data;
+}, function (error) {
+    return Promise.reject(error);
+});
+
 store.subscribe(()=>console.log(store.getState()))
 const render = ()=>{
   const callback = (...arg) => {

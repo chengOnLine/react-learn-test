@@ -6,6 +6,7 @@ import Hooks from "../pages/hooks";
 import CssMiddle from "../pages/test/cssMiddle";
 import Communication from "../pages/communication";
 import ClientXScreenXPageX from "../pages/test/clientXScreenXPageX";
+import MockLogin from "../pages/mockLogin";
 export default () => (
     <Switch>
       <Route exact path="/layout/test1" component={CssMiddle}></Route>
@@ -15,6 +16,7 @@ export default () => (
       <Route exact path="/communication/route" component={MyRoute}></Route>
       <Route exact path="/api/react" component={ReactAPI}></Route>
       <Route exact path="/api/hooks" component={Hooks}></Route>
+      <Route exact path="/mockLogin" component={MockLogin}></Route>
       {/* <Route exact path="/react" component={ReactAPI}></Route> */}
     </Switch>
 );

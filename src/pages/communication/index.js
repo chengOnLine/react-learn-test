@@ -7,6 +7,7 @@ import {Provider} from "../../context";
 import { Button } from "_antd@4.13.0@antd";
 import ItemBox from "../../components/itemBox";
 import axios from "axios";
+
 class Home extends React.Component{
     constructor(props){
         super(props);
@@ -41,10 +42,17 @@ class Home extends React.Component{
         }
     }
     fetchData = ()=>{
-        axios.get("http://localhost:8080").then(res => {
-            console.log("res" , res);
-        }).catch(e=>{
-            console.log("error" ,e);
+        // axios.get("http://localhost:8080/mockLogin").then(res => {
+        //     console.log("res" , res);
+        // }).catch(e=>{
+        //     console.log("error" ,e);
+        // })
+        axios({
+            url:"http://localhost:8080/",
+            method:"get",
+            data:{
+                name:"123"
+            }
         })
     }
 

@@ -10,6 +10,10 @@ const navConfig = {
     key:"/",
     children:[
         {
+            title:"登录",
+            key:"/mockLogin",
+        },
+        {
             title:"css布局",
             key:'/layout',
             children:[
