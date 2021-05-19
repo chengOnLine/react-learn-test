@@ -1,0 +1,11 @@
+#container{
+    position: relative;
+}
+.bubble{
+    position: absolute;
+}
+.bubble:hover{
+    width: 150px !important; 
+    height: 150px !important;
+    z-index: 100;
+}

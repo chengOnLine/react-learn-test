@@ -4,6 +4,27 @@ class Middle extends React.Component{
     constructor(props){
         super(props);
     }
+
+    componentDidMount(){
+        var canJump = function(nums) {
+            if(nums.length <= 1){
+                return true;
+            }
+            let dp = new Array( nums.length ).fill(0);
+            dp[0] = 1;
+        
+            for(let i=1 ; i<nums.length ; i++){
+                for(let k=1 , j=i-k; j>=0 ; k++){
+                    if(nums[j] >= k){
+                        dp[i] += dp[j];
+                    }
+                }
+                console.log(dp);
+            }
+            return dp[nums.length-1] !== 0;
+        };
+        // console.log(canJump([2,3,1,1,4]));
+    }
     render(){
         return <div className="content">
             {/* <h1>css的居中方案</h1>

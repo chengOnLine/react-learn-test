@@ -24,6 +24,10 @@ const navConfig = {
                 {
                     title:"clientXScreenXPageX",
                     key:"/layout/clientXScreenXPageX"
+                },
+                {
+                    title:"canvas",
+                    key:"/layout/canvas",
                 }
             ]
         },
