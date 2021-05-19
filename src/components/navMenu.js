@@ -14,7 +14,7 @@ const navConfig = {
             key:"/mockLogin",
         },
         {
-            title:"css布局",
+            title:"css",
             key:'/layout',
             children:[
                 {
@@ -26,8 +26,19 @@ const navConfig = {
                     key:"/layout/clientXScreenXPageX"
                 },
                 {
-                    title:"canvas",
-                    key:"/layout/canvas",
+                    title:"css 的‘奇技淫巧’",
+                    key:"/layout/funcss",
+                    children:[
+                        {
+                            title:"css 画龙",
+                            key:"/layout/funcss/dragon",
+                        },
+                        {
+                            title:"css 画波浪",
+                            key:"/layout/funcss/wave"
+        
+                        }
+                    ]
                 }
             ]
         },

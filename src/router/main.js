@@ -6,13 +6,17 @@ import Hooks from "../pages/hooks";
 import CssMiddle from "../pages/test/cssMiddle";
 import Communication from "../pages/communication";
 import ClientXScreenXPageX from "../pages/test/clientXScreenXPageX";
-import Canvas from "../pages/test/canvas";
+import Dragon from "../pages/test/dragon";
+import Wave from "../pages/funCss/wave";
+
 import MockLogin from "../pages/mockLogin";
 export default () => (
     <Switch>
       <Route exact path="/layout/test1" component={CssMiddle}></Route>
       <Route exact path="/layout/clientXScreenXPageX" component={ClientXScreenXPageX}></Route>
-      <Route exact path="/layout/canvas" component={Canvas}></Route>
+      <Route exact path="/layout/funcss/dragon" component={Dragon}></Route>
+      <Route exact path="/layout/funcss/wave" component={Wave}></Route>
+
       <Route exact path="/communication" component={Communication}></Route>
       <Route exact path="/communication/route/:paramsName" component={MyRoute}></Route>
       <Route exact path="/communication/route" component={MyRoute}></Route>
