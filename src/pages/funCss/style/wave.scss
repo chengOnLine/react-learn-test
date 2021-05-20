@@ -1,3 +1,117 @@
-:local(.className){
+:local(.wave){
+    .rect{
+        width: 300px;
+        height: 80px;
+        border: 1px solid gray;
+        background-color: cyan;
+        // animation: identifier 5s ease-out infinite;
+        // animation-name: identifier;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        animation-duration: 4s;
+        animation-delay: 2s;
+        position: relative;
+        overflow: hidden;
+        
+        // &:before, &:after {
+        //     content: "";
+        //     position: absolute;
+        //     left: 50%;
+        //     min-width: 100vw;
+        //     min-height: 100vw;
+        //     background-color: #fff;
+        //     animation-name: rotate;
+        //     animation-iteration-count: infinite;
+        //     animation-timing-function: linear;
+        // }
     
+        // &:before {
+        //     bottom: 30px;
+        //     border-radius: 45%;
+        //     animation-duration: 10s;
+        // }
+    
+        // &:after {
+        //     bottom: 10px;
+        //     opacity: .5;
+        //     border-radius: 47%;
+        //     animation-duration: 10s;
+        // }
+
+        .circle{
+            position: absolute;
+            left: 50%;
+            min-width: 100vw;
+            min-height: 100vw;
+            background-color: #fff;
+            animation-name: rotate;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+        .c1{
+            bottom: 30px;
+            border-radius: 45%;
+            animation-duration: 10s;
+        }
+        .c2{
+            bottom: 10px;
+            opacity: .5;
+            border-radius: 47%;
+            animation-duration: 10s;
+        }
+    }
+
+    $count: 120;
+    $speed: 2s;
+    .g-rect{
+        width: 300px;
+        height: 80px;
+        border: 1px solid gray;
+        background-color: cyan;
+        display: flex;
+
+        .g-item{
+            --f: #{$speed / -$count};
+            width: 100%;
+            height: 20px;
+            background-color: #fff;
+            // animation-name: stretch;
+            // animation-timing-function: ease-in-out;
+            // animation-duration: 3s;
+            // animation-iteration-count: infinite;
+            animation: stretch $speed infinite ease-in-out alternate;
+        }
+
+        @for $i from 0 to $count {
+            .g-item:nth-child(#{$i + 1}) {
+                animation-delay: calc(var(--f) * #{$i});
+            }
+        }
+    }
+    @keyframes identifier {
+        0%{height: 80px;}
+        100%{height: 300px;}
+    }
+    @keyframes rotate {
+        0% {
+            transform: translate(-50%, 0) rotateZ(0deg);
+        }
+        50% {
+            transform: translate(-50%, -2%) rotateZ(180deg);
+        }
+        100% {
+            transform: translate(-50%, 0%) rotateZ(360deg);
+        }
+    }
+    @keyframes stretch {
+        0% {
+            height: 60px;
+        }
+        // 50% {
+        //     height: 200px;
+        // }
+        100% {
+            height: 20px;
+        }
+    }
 }
