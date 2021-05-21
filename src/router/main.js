@@ -8,6 +8,7 @@ import Communication from "../pages/communication";
 import ClientXScreenXPageX from "../pages/test/clientXScreenXPageX";
 import Dragon from "../pages/test/dragon";
 import Wave from "../pages/funCss/wave";
+import waterMark from "../pages/funCss/watermark";
 
 import MockLogin from "../pages/mockLogin";
 export default () => (
@@ -16,12 +17,14 @@ export default () => (
       <Route exact path="/layout/clientXScreenXPageX" component={ClientXScreenXPageX}></Route>
       <Route exact path="/layout/funcss/dragon" component={Dragon}></Route>
       <Route exact path="/layout/funcss/wave" component={Wave}></Route>
+      <Route exact path="/layout/funcss/waterMark" component={waterMark}></Route>
 
       <Route exact path="/communication" component={Communication}></Route>
       <Route exact path="/communication/route/:paramsName" component={MyRoute}></Route>
       <Route exact path="/communication/route" component={MyRoute}></Route>
       <Route exact path="/api/react" component={ReactAPI}></Route>
       <Route exact path="/api/hooks" component={Hooks}></Route>
+      
       <Route exact path="/mockLogin" component={MockLogin}></Route>
       {/* <Route exact path="/react" component={ReactAPI}></Route> */}
     </Switch>

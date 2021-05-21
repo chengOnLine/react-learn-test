@@ -37,6 +37,10 @@ const navConfig = {
                             title:"css 画波浪",
                             key:"/layout/funcss/wave"
         
+                        },
+                        {
+                            title:"前端加水印",
+                            key:"/layout/funcss/waterMark",
                         }
                     ]
                 }

@@ -6,24 +6,47 @@ class Middle extends React.Component{
     }
 
     componentDidMount(){
-        var canJump = function(nums) {
-            if(nums.length <= 1){
-                return true;
-            }
-            let dp = new Array( nums.length ).fill(0);
-            dp[0] = 1;
-        
-            for(let i=1 ; i<nums.length ; i++){
-                for(let k=1 , j=i-k; j>=0 ; k++){
-                    if(nums[j] >= k){
-                        dp[i] += dp[j];
-                    }
+
+        var ListNode = function(val, next) {
+             this.val = (val===undefined ? 0 : val)
+            this.next = (next===undefined ? null : next)
+        }
+        var insertionSortList = function(head) {
+            let result = null;
+            while( head ){
+                console.log("head", head , head.val);
+                console.log("result:before" , result)
+                if(!result){
+                    result = new ListNode( head.val , null);
+                }else{
+                    if( result.val > head.val){
+                        let node = new ListNode( head.val , null);
+                        node.next = result;
+                        result = node;
+                    }else {
+                        let node = result;
+                        while( node ){
+                            
+                            if( head.val >= node.val && (!node.next || head.val < node.next.val )){
+                                let temp = node.next;
+                                node.next = new ListNode( head.val , temp);
+                                break;
+                            }
+                            node = node.next;
+                        }
+                    }  
                 }
-                console.log(dp);
+                console.log("result:after" , result , result.val)
+                head = head.next;
             }
-            return dp[nums.length-1] !== 0;
+            return result;
         };
-        // console.log(canJump([2,3,1,1,4]));
+        let head = new ListNode( 4 , null);
+        head.next = new ListNode( 2 , null);
+        head.next.next = new ListNode( 1 , null);
+        head.next.next.next = new ListNode( 3 , null);
+        console.log("head" , head , head.val);
+        console.log("result" , insertionSortList(head));
     }
     render(){
         return <div className="content">
