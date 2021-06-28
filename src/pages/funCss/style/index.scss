@@ -23,3 +23,460 @@
 
     }
 }   
+
+:local(.inputStyle){
+  input::-webkit-input-placeholder {    /* Chrome/Opera/Safari */
+    color: red;
+  }
+  input::-moz-placeholder { /* Firefox 19+ */  
+      color: red;
+  }
+  input:-ms-input-placeholder { /* IE 10+ */
+      color: red;
+  }
+  input:-moz-placeholder { /* Firefox 18- */
+      color: red;
+  }
+
+  input:focus {   
+    background-color: cyan;
+  }
+
+  // 输入框无边框
+  input{
+    // border: none;
+    // outline: none;
+  }
+
+  .outline{
+    outline: 5px solid red; //  对宽高不影响
+    border: 5px solid black;
+    background-color: darkcyan;
+  }
+}
+
+:local(.overflow){
+    /*容器*/
+    .container {
+        width: 300px;
+        // height: 200px;
+        font-size: 13px;
+        color: #555;
+      }
+   
+      .c-red {
+        color: red;
+      }
+   
+      p {
+        // background-color: rgba(189, 227, 255, 0.28);
+        padding: 2px 5px;
+      }
+   
+      /*单行*/
+      .single {
+        width: 300px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        // word-break: break-all;
+      }
+   
+      /*多行*/
+      .mutiple {
+        width: 300px;
+        display: -webkit-box; /*重点，不能用block等其他，将对象作为弹性伸缩盒子模型显示*/
+        -webkit-box-orient: vertical; /*从上到下垂直排列子元素（设置伸缩盒子的子元素排列方式）*/
+        -webkit-line-clamp: 3; /*行数，超出三行隐藏且多余的用省略号表示...*/
+        line-clamp: 3;
+        word-break: break-all;
+        overflow: hidden;
+        // max-width: 100%;
+      }
+  
+      .text{
+        width: 500px;
+        background-color: cyan;
+     }
+   
+     .text span{
+       text-transform: uppercase;
+     }
+     .text .pre{
+       white-space: pre;
+     }
+     .text .nowrap{
+      white-space: nowrap;
+    }
+    .text .pre-wrap{
+      white-space: pre-wrap;
+    }
+    .text .pre-line{
+      white-space: pre-line;
+    }
+}
+
+:local(.negative){
+  overflow: hidden;
+  .wrap{
+    /* 利用负值技巧进行整体移动 */
+    margin-left:-6px;
+  }
+  .item{
+      float:left;
+      width: 20%;
+      height: 300px;
+      border-left:6px solid #fff;
+      box-sizing: border-box;
+  }
+}
+
+:local(.position){
+  position: relative;
+  span{
+    border:1px solid red;
+    position: absolute;
+    left:0;
+    right:0;
+    
+     /* 等同于设置  width:100%;display:block */
+  }
+}
+
+:local(.scroll){
+  .scroll-container {
+    width: 500px;
+    height: 150px;
+    border: 1px solid #ddd;
+    padding: 15px;
+    overflow: auto;     /*必须*/
+  }
+  
+  .scroll-container::-webkit-scrollbar {
+    width: 8px;
+    background: white;
+  }
+  
+  .scroll-container::-webkit-scrollbar-corner,
+    /* 滚动条角落 */
+  .scroll-container::-webkit-scrollbar-thumb,
+  .scroll-container::-webkit-scrollbar-track {      /*滚动条的轨道*/
+    border-radius: 4px;
+  }
+  
+  .scroll-container::-webkit-scrollbar-corner,
+  .scroll-container::-webkit-scrollbar-track {
+    /* 滚动条轨道 */
+    background-color: rgba(180, 160, 120, 0.1);
+    box-shadow: inset 0 0 1px rgba(180, 160, 120, 0.5);
+  }
+  
+  .scroll-container::-webkit-scrollbar-thumb {
+    /* 滚动条手柄 */
+    background-color: #00adb5;
+  }
+}
+
+:local( .triangle){
+  .item{
+    margin-bottom: 10px;
+  }
+  .regular-triangle{
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 25px 40px 25px;
+    border-color: transparent transparent rgb(245, 129, 127) transparent;
+  }
+
+  .inverted-triangle{
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 40px 25px 0 25px;
+    border-color: rgb(245,129,127) transparent transparent transparent;
+  }
+  
+  .dotted-line{
+    width: 800px;
+    // margin: auto;
+    padding: 20px;
+    border: 1px dashed transparent;
+    background: linear-gradient(white, white) padding-box, repeating-linear-gradient(-45deg, red 0, #ccc .25em, white 0, white .75em);
+  }
+
+  .coupon {
+    width: 300px;
+     height: 100px;
+     line-height: 100px;
+    //  margin: 50px auto;
+     text-align: center;
+     position: relative;
+     background: radial-gradient(circle at right bottom, transparent 10px, #ffffff 0) top right /50% 51px no-repeat,
+     radial-gradient(circle at left bottom, transparent 10px, #ffffff 0) top left / 50% 51px no-repeat,
+     radial-gradient(circle at right top, transparent 10px, #ffffff 0) bottom right / 50% 51px no-repeat,
+     radial-gradient(circle at left top, transparent 10px, #ffffff 0) bottom left / 50% 51px no-repeat;
+     filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, .2));
+   }
+
+   .coupon span {
+     display: inline-block;
+     vertical-align: middle;
+     margin-right: 10px;
+     color: red;
+     font-size: 50px;
+     font-weight: 400;
+   }
+
+}
+
+:local(.message){
+  .popver{
+    // background-color: cyan;
+    span::before{
+      width: 100px;
+      height: 30px;
+      background-color: cyan;
+      content: "hello ya";
+      display: block;
+      position: relative;
+      left: 0;
+      bottom: 5px;
+    }
+
+    span::after{
+      content:"";
+      // display: block;
+      width: 0;
+      height: 0;
+      border-width: 6px 5px 0 5px;
+      border-style: solid;
+      border-color: cyan transparent transparent transparent;
+      position: relative;
+      left: 0;
+      bottom: 0;
+    }
+  }
+
+  .example{
+    // margin:0;
+    // height: 100%;
+    // display: grid;
+    // place-content: center;
+    // display: flex;
+
+    .con {
+      // width: 200px;
+      display: inline-block;
+      margin: 20px 60px;
+      background-color:red;
+    }
+    
+    .css-tips {
+        vertical-align: middle;
+        cursor: pointer;
+    }
+    
+    [data-title] {
+        position: relative;
+        overflow: visible;
+    }
+    
+    .css-tips[data-title]:before,
+    .css-tips[data-title]:after {
+        display: block;
+        position: absolute;
+        z-index: 1;
+        left: 50%;
+        bottom: 100%;
+        transform: translate(-50%, -20px);
+        opacity: 0;
+        transition: .15s .15s;
+        color: #373c42;
+        visibility: hidden;
+    }
+    
+    .css-tips[data-title]:before {
+        content: attr(data-title);
+        border-radius: 3px;
+        padding: 6px 10px;
+        line-height: 18px;
+        text-align: left;
+        background-color: #373c42;
+        color: #fff;
+        font-size: 12px;
+        font-style: normal;
+        white-space: nowrap;
+    }
+    
+    .css-tips[data-title]:after {
+        content: '';
+        width: 0;
+        height: 0;
+        margin-bottom: -12px;
+        overflow: hidden;
+        border: 6px solid transparent;
+        border-top-color: currentColor;
+    }
+    
+    .css-tips[data-title]:hover:before,
+    .css-tips[data-title]:hover:after {
+        visibility: visible;
+        transform: translate(-50%, -10px);
+        opacity: 1;
+    }
+    
+    /* right */
+    .css-tips[data-title][data-title-dir="right"]:before,
+    .css-tips[data-title][data-title-dir="right"]:after{
+        left: 100%;
+        top: 50%;
+        bottom: auto;
+        transform: translate(20px, -50%);
+    }
+    .css-tips[data-title][data-title-dir="right"]:after {
+        margin: 0;
+        margin-left: -12px;
+        border-color: transparent;
+        border-right-color: currentColor;
+    }
+    .css-tips[data-title][data-title-dir="right"]:hover:before,
+    .css-tips[data-title][data-title-dir="right"]:hover:after {
+        visibility: visible;
+        transform: translate(10px, -50%);
+        opacity: 1;
+    }
+    
+    /* bottom */
+    .css-tips[data-title][data-title-dir="bottom"]:before,
+    .css-tips[data-title][data-title-dir="bottom"]:after{
+        left: 50%;
+        top: 100%;
+        bottom: auto;
+        transform: translate(-50%, 20px);
+    }
+    .css-tips[data-title][data-title-dir="bottom"]:after {
+        margin: 0;
+        margin-top: -12px;
+        border-color: transparent;
+        border-bottom-color: currentColor;
+    }
+    .css-tips[data-title][data-title-dir="bottom"]:hover:before,
+    .css-tips[data-title][data-title-dir="bottom"]:hover:after {
+        visibility: visible;
+        transform: translate(-50%, 10px);
+        opacity: 1;
+    }
+    
+    /* left */
+    .css-tips[data-title][data-title-dir="left"]:before,
+    .css-tips[data-title][data-title-dir="left"]:after{
+        left: auto;
+        right: 100%;
+        top: 50%;
+        bottom: auto;
+        transform: translate(-20px, -50%);
+    }
+    .css-tips[data-title][data-title-dir="left"]:after {
+        margin: 0;
+        margin-right: -12px;
+        border-color: transparent;
+        border-left-color: currentColor;
+    }
+    .css-tips[data-title][data-title-dir="left"]:hover:before,
+    .css-tips[data-title][data-title-dir="left"]:hover:after {
+        visibility: visible;
+        transform: translate(-10px, -50%);
+        opacity: 1;
+    }
+    
+    /* muti */
+    .css-tips[data-title][data-title-muti]:before {
+        width: 150px;
+        white-space: normal;
+    }
+    
+    /* success */
+    .css-tips[data-title][data-title-type="success"]:before {
+        background-color: #52c41a;
+    }
+    .css-tips[data-title][data-title-type="success"]:after {
+        color:#52c41a;
+    }
+    /* error */
+    .css-tips[data-title][data-title-type="error"]:before {
+        background-color: #f5222d;
+    }
+    .css-tips[data-title][data-title-type="error"]:after {
+        color:#f5222d;
+    }
+    /* warn */
+    .css-tips[data-title][data-title-type="warn"]:before {
+        background-color: #faad14;
+    }
+    .css-tips[data-title][data-title-type="warn"]:after {
+        color:#faad14;
+    }
+  }
+  
+  .test{
+    .parent{
+      width: 200px;
+      height: 50px;
+      margin-bottom: 10px;
+      background-color: cyan;
+    }
+    .parent::before{
+      content:"";
+      width: 20px;
+      height: 20px;
+      background-color: red;
+      display: block;
+    }
+    .parent::after{
+      content:"";
+      width: 20px;
+      height: 20px;
+      background-color: green;
+      display: block;
+    }
+
+    .relative:before,
+    .relative::after{
+      position: relative;
+      top: 0;
+      left: 0;
+    }
+
+    .absolute::before,
+    .absolute::after{
+      position: absolute;
+      top:0;
+      left:0;
+    }
+  }
+}
+
+:local(.mask){
+    .test-mask{
+      margin: auto;
+      position: relative;
+      width: 3rem;
+      height: 180px;
+      background: url(https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1877625006,2341162086&fm=26&gp=0.jpg) no-repeat;
+      background-size: cover;
+      // mask: url(mask.png);
+      mask:
+          linear-gradient(135deg, transparent 10px, #fff 20px),
+          top left,
+          linear-gradient(-135deg, transparent 15px, #fff 50px)
+          top right,
+          linear-gradient(-45deg, transparent 15px, #fff 50px)
+          bottom right,
+          linear-gradient(45deg, transparent 15px, #fff 60px)
+          bottom left;
+      mask-size: 50% 50%;
+      mask-repeat: no-repeat;
+  }
+
+}

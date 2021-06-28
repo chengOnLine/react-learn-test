@@ -69,10 +69,10 @@ class Middle extends React.Component{
                 </div>
             </div> */}
 
-            {/* <h1>品字布局</h1>
+            {/* <h1>品字布局</h1> */}
             <div className="div1 box">1</div>
             <div className="div2 box">2</div>
-            <div className="div3 box">3</div> */}
+            <div className="div3 box">3</div>
 
             {/* <h1>圣杯布局（float）</h1>
                 <div class="header">这里是头部</div>

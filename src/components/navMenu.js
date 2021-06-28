@@ -30,6 +30,10 @@ const navConfig = {
                     key:"/layout/funcss",
                     children:[
                         {
+                            title:"汇总",
+                            key:"/layout/funcss/list",
+                        },
+                        {
                             title:"css 画龙",
                             key:"/layout/funcss/dragon",
                         },
@@ -38,10 +42,10 @@ const navConfig = {
                             key:"/layout/funcss/wave"
         
                         },
-                        {
-                            title:"前端加水印",
-                            key:"/layout/funcss/waterMark",
-                        }
+                        // {
+                        //     title:"前端加水印",
+                        //     key:"/layout/funcss/waterMark",
+                        // }
                     ]
                 }
             ]
