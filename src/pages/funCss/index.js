@@ -1,11 +1,15 @@
 import React , { useState , useEffect , forwardRef , useRef} from 'react';
 import ItemBox from "../../components/itemBox";
 import style from "./style/index.scss";
-import { Button, message } from "antd";
+import { Button, message , Select , Form} from "antd";
+const { Option } = Select;
 export default forwardRef(( props , ref) => {
 
     let itemBox = useRef();
     let timer = useRef(null);
+    const [ whiteSpace , setWhiteSpace] = useState("normal");
+    const [ wordBreak , setWordBreak] = useState("normal");
+    const [ wordWrap , setWordWrap] = useState("normal");
     useEffect(()=>{
         console.log(itemBox , "itemBox");
         function doWaterMark(width, height, content) { 
@@ -158,6 +162,67 @@ export default forwardRef(( props , ref) => {
                 </div>
             </ItemBox>
             
+            <ItemBox title = "歌词" className={style.lyric}>
+                <div className="lyric-text" data-title = "北京欢迎你，为你开天辟地">
+                    北京欢迎你，为你开天辟地
+                </div>
+            </ItemBox>
+
+            <ItemBox title="white-space word-wrap word-break" className={style.text}>
+                white-space:{whiteSpace}<br/>
+                word-break:{wordBreak}<br/>
+                word-wrap:{wordWrap}<br/>
+                <div className="text-box">
+                    Hi&nbsp;&nbsp;,
+                    This     is a incomprehensibilities long word.
+                    <br></br>
+                    你好&nbsp;&nbsp;，
+                    这   是一个不可思议的长单词
+                </div>
+                <div className="text-box" style={{ whiteSpace: `${whiteSpace}` , wordBreak:`${wordBreak}` , wordWrap:`${wordWrap}`}}>
+                    Hi&nbsp;&nbsp;,
+                    This     is a incomprehensibilities long word.
+                    <br></br>
+                    你好&nbsp;&nbsp;，
+                    这   是一个不可思议的长单词
+                </div>
+                <Form layout="inline" >
+                    <Form.Item label="white-space">
+                        <Select 
+                            value = {whiteSpace}
+                            style={{width:"200px"}}
+                            onChange = { (value)=> setWhiteSpace(value) }
+                        >
+                            <Select.Option value={"normal"}>normal</Select.Option>
+                            <Select.Option value={"nowrap"}>nowrap</Select.Option>
+                            <Select.Option value={"pre"}>pre</Select.Option>
+                            <Select.Option value={"pre-wrap"}>pre-wrap</Select.Option>
+                            <Select.Option value={"pre-line"}>pre-line</Select.Option>
+                        </Select>
+                    </Form.Item>
+                    <Form.Item label="word-break">
+                        <Select 
+                            value = {wordBreak}
+                            style={{width:"200px"}}
+                            onChange = { (value)=> setWordBreak(value) }
+                        >
+                            <Select.Option value={"normal"}>normal</Select.Option>
+                            <Select.Option value={"break-all"}>break-all</Select.Option>
+                            <Select.Option value={"keep-all"}>keep-all</Select.Option>
+                        </Select>
+                    </Form.Item>
+                    <Form.Item label="word-wrap">
+                        <Select 
+                            value = {wordWrap}
+                            style={{width:"200px"}}
+                            onChange = { (value)=> setWordWrap(value) }
+                        >
+                            <Select.Option value={"normal"}>normal</Select.Option>
+                            <Select.Option value={"break-word"}>break-word</Select.Option>
+                        </Select>
+                    </Form.Item>
+                </Form>
+            </ItemBox>
         </div>
     </React.Fragment>
 } )

@@ -480,3 +480,48 @@
   }
 
 }
+
+:local(.lyric){
+  .lyric-text{
+    font-size: 20px;
+    font-weight: 800;
+    color:"black";
+    position: relative;
+  }
+
+  .lyric-text::after{
+    content: attr(data-title);
+    // width: 100px;
+    // height: 50px;
+    // height: 50px;
+    white-space: nowrap;
+    color: red;
+    position: absolute;
+    left: 0;
+    right: 0;
+    animation-name: slide;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    animation-fill-mode: both;
+    overflow: hidden;
+  }
+
+  @keyframes slide{
+    0% {
+      width: 0;
+    }
+    
+    100% {
+      width: 100%;
+    }
+  }
+}
+
+:local(.text){
+  .text-box{
+    width: 200px;
+    border: 1px solid gray;
+    font-size: 18px;
+    // background-color: gray;
+  }
+}
