@@ -87,6 +87,10 @@ const navConfig = {
 
             ]
         },
+        {
+            title:"档案管理",
+            key:"/fileManagement/list",
+        }
     ]
 }
 

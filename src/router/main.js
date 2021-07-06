@@ -11,6 +11,10 @@ import Wave from "../pages/funCss/wave";
 import FunCSS from "../pages/funCss/";
 import waterMark from "../pages/funCss/watermark";
 
+// 列表 详情页 测试缓存组件
+import List from "../pages/fileManagement/index";
+import Detail from "../pages/fileManagement/detail";
+
 import MockLogin from "../pages/mockLogin";
 export default () => (
     <Switch>
@@ -27,6 +31,9 @@ export default () => (
       <Route exact path="/api/react" component={ReactAPI}></Route>
       <Route exact path="/api/hooks" component={Hooks}></Route>
       
+      <Route exact path="/fileManagement/list" component={List}></Route>
+      <Route exact path="/fileManagement/detail" component={Detail}></Route>
+
       <Route exact path="/mockLogin" component={MockLogin}></Route>
       {/* <Route exact path="/react" component={ReactAPI}></Route> */}
     </Switch>
