@@ -47,10 +47,10 @@ export default class List extends React.Component{
             },
             {
                 title: "操作",
-                dataIndex:"key",
+                dataIndex:"name",
                 align:"center",
-                render:(key)=>{
-                   return <Button type="link" onClick={ ()=>{this.goToDetailPage(key)} }>查看</Button>
+                render:(name)=>{
+                   return <Button type="link" onClick={ ()=>{this.goToDetailPage(name)} }>查看</Button>
                 }
             }
         ]

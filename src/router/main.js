@@ -9,6 +9,7 @@ import ClientXScreenXPageX from "../pages/test/clientXScreenXPageX";
 import Dragon from "../pages/test/dragon";
 import Wave from "../pages/funCss/wave";
 import FunCSS from "../pages/funCss/";
+import {CacheRoute,CacheSwitch} from 'react-router-cache-route'
 import waterMark from "../pages/funCss/watermark";
 
 // 列表 详情页 测试缓存组件
@@ -17,7 +18,7 @@ import Detail from "../pages/fileManagement/detail";
 
 import MockLogin from "../pages/mockLogin";
 export default () => (
-    <Switch>
+    <CacheSwitch>
       <Route exact path="/layout/test1" component={CssMiddle}></Route>
       <Route exact path="/layout/clientXScreenXPageX" component={ClientXScreenXPageX}></Route>
       <Route exact path="/layout/funcss/dragon" component={Dragon}></Route>
@@ -31,10 +32,10 @@ export default () => (
       <Route exact path="/api/react" component={ReactAPI}></Route>
       <Route exact path="/api/hooks" component={Hooks}></Route>
       
-      <Route exact path="/fileManagement/list" component={List}></Route>
+      <CacheRoute exact path="/fileManagement/list" component={List}></CacheRoute>
       <Route exact path="/fileManagement/detail" component={Detail}></Route>
 
       <Route exact path="/mockLogin" component={MockLogin}></Route>
       {/* <Route exact path="/react" component={ReactAPI}></Route> */}
-    </Switch>
+    </CacheSwitch>
 );
