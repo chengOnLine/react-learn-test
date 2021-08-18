@@ -90,6 +90,10 @@ const navConfig = {
         {
             title:"档案管理(缓存路由)",
             key:"/fileManagement/list",
+        },
+        {
+            title:"图片懒加载",
+            key:"/lazyLoading"
         }
     ]
 }

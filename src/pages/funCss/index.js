@@ -193,11 +193,11 @@ export default forwardRef(( props , ref) => {
                             style={{width:"200px"}}
                             onChange = { (value)=> setWhiteSpace(value) }
                         >
-                            <Select.Option value={"normal"}>normal</Select.Option>
-                            <Select.Option value={"nowrap"}>nowrap</Select.Option>
-                            <Select.Option value={"pre"}>pre</Select.Option>
-                            <Select.Option value={"pre-wrap"}>pre-wrap</Select.Option>
-                            <Select.Option value={"pre-line"}>pre-line</Select.Option>
+                            <Select.Option value={"normal"}>normal 自动换行，合并所有空格为1个空格，将换行符（“enter”）也转换成一个空格。</Select.Option>
+                            <Select.Option value={"nowrap"}>nowrap 不许自动换行，合并所有空格为1个空格，将换行符（“enter”）也转换成一个空格</Select.Option>
+                            <Select.Option value={"pre"}>pre 不许自动换行，保留原来所有空格，换行符（“enter”）换行功能起作用。</Select.Option>
+                            <Select.Option value={"pre-wrap"}>pre-wrap 自动换行，合并所有空格为1个空格，换行符（“enter”）换行功能起作用。</Select.Option>
+                            <Select.Option value={"pre-line"}>pre-line 自动换行，保留原来所有空格，换行符（“enter”）换行功能起作用</Select.Option>
                         </Select>
                     </Form.Item>
                     <Form.Item label="word-break">

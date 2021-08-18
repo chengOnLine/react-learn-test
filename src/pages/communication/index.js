@@ -16,6 +16,30 @@ class Home extends React.Component{
             fruit:"apple",
         }
     }   
+
+    componentDidMount(){
+        // var scope = "global scope";
+        // function checkscope(){
+        //     var scope = "local scope";
+        //     function f(){
+        //         console.log("scope" , scope);
+        //     }
+        //     return f();
+        // }
+        this.scope = "global scope";
+        let obj = {
+            scope : "obj",
+            checkScope: function(){
+                console.log(this.scope);
+            }
+        }
+        let fn = obj.checkScope;
+        fn();
+        // obj.fn();
+        obj.checkScope();
+        // checkscope();
+    }
+
     getContext = ()=>{
         return {
             ...this.state,
