@@ -7,6 +7,12 @@ class ReduxTest extends React.Component{
         super(props);
         store.dispatch({type:"updateUser" , data:{username:"李林城" , phone:"15119623093"}})
     }
+    componentDidMount(){
+        console.log("Redux ComponentDidMount");
+    }
+    shouldComponentUpdate(){
+        
+    }
     render(){
         const {userInfo , baseInfo } = store.getState() || {};
         const {username , phone } = userInfo || {};

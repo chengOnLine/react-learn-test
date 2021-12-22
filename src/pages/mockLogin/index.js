@@ -16,6 +16,7 @@ function MockLogin(props) {
 
     useEffect(()=>{
         fetchData();
+        console.log("process.env.NODE_ENV" , process.env.NODE_ENV);
     } , [])
 
     const [form] = Form.useForm();
@@ -67,7 +68,16 @@ function MockLogin(props) {
 
     return (
         <div>
-            <ItemBox title="mockLogin">
+            <ItemBox>
+                <ItemBox>
+                  1
+                </ItemBox>
+                <ItemBox>
+                  2
+                </ItemBox>
+                {/* <div>1</div> */}
+            </ItemBox>
+            {/* <ItemBox title="mockLogin">
                 <Form 
                     form = {form}
                     {...layout}
@@ -134,7 +144,7 @@ function MockLogin(props) {
                         })
                     } 
                 </ul>
-            </ItemBox>
+            </ItemBox> */}
         </div>
     )
 }

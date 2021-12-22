@@ -2,6 +2,7 @@ import React , { useState , useEffect , forwardRef , useRef} from 'react';
 import ItemBox from "../../components/itemBox";
 import style from "./style/index.scss";
 import { Button, message , Select , Form} from "antd";
+import example from "../../images/example.png";
 const { Option } = Select;
 export default forwardRef(( props , ref) => {
 
@@ -40,6 +41,22 @@ export default forwardRef(( props , ref) => {
                 doWaterMark(300 , 30 , "我是水印");
             }
         } , 3000);
+
+
+        let btn=document.getElementById('waterButton')
+        let water1=document.getElementById('water1')
+        let water2=document.getElementById('water2')
+        // let timer=''
+        btn.addEventListener('click', ()=>{
+          window.clearTimeout(timer)
+          water1.classList.add("good_water-1");
+          water2.classList.add("good_water-2");
+          setTimeout(()=>{
+            water1.classList.remove("good_water-1");
+            water2.classList.remove("good_water-2");
+          }, 3000)
+        })
+
         return ()=>{
             timer && clearInterval(timer);
         }
@@ -222,6 +239,26 @@ export default forwardRef(( props , ref) => {
                         </Select>
                     </Form.Item>
                 </Form>
+            </ItemBox>
+
+            <ItemBox title = "剑气加载" className={style.loading}>
+                <div className="sword">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </ItemBox>
+
+            <ItemBox title="水波按钮" className={style.waterBtn}>
+                <div className="waterButton">
+                    <div className="good">
+                        <div className="good_btn" id="waterButton">
+                            <img src={example} alt=""/>
+                        </div>
+                        <span id="water1"></span>
+                        <span id="water2"></span>
+                    </div>
+                </div>
             </ItemBox>
         </div>
     </React.Fragment>

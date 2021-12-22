@@ -29,7 +29,7 @@ class Home extends React.Component{
         this.scope = "global scope";
         let obj = {
             scope : "obj",
-            checkScope: function(){
+            checkScope: () => {
                 console.log(this.scope);
             }
         }

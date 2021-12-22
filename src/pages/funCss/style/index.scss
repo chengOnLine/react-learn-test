@@ -525,3 +525,134 @@
     // background-color: gray;
   }
 }
+
+:local(.loading){
+  background-color: black;
+  .sword {
+    // background-color: red;
+    position: relative;
+    margin: 50px auto;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+  }
+  .sword span{
+    position: absolute;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;  
+  }
+  .sword :first-child{
+    left: 0%;
+    top: 0%;
+    border-bottom: 3px solid #EFEFFA;
+    animation: sword-one 1s linear infinite;
+  }
+
+  .sword :nth-child(2){
+    left: 0%;
+    top: 0%;
+    border-bottom: 3px solid #EFEFFA;
+    animation: sword-two 1s linear infinite;
+  }
+
+  .sword :last-child{
+    left: 0%;
+    top: 0%;
+    border-bottom: 3px solid #EFEFFA;
+    animation: sword-three 1s linear infinite;
+  }
+
+  @keyframes sword-one {
+    0% {
+      transform: rotateX(35deg) rotateY(-45deg) rotateZ(0deg);
+    }
+    100% {
+      transform: rotateX(35deg) rotateY(-45deg) rotateZ(360deg);
+    }
+  }
+  @keyframes sword-two {
+    0% {
+      transform: rotateX(50deg) rotateY(10deg) rotateZ(180deg);
+    }
+    100% {
+      transform: rotateX(50deg) rotateY(10deg) rotateZ(540deg);
+    }
+  }
+  @keyframes sword-three {
+    0% {
+      transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg);
+    }
+    100% {
+      transform: rotateX(35deg) rotateY(55deg) rotateZ(720deg);
+    }
+  }
+}
+
+:local(.waterBtn){
+    /** button.css **/
+    // background-color: rgb(107, 84, 84);
+  .waterButton {
+    // height: 270px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .good {
+    width: 60px;
+    height: 60px;
+    position: relative;
+  }
+  .good_btn {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    z-index: 3;
+    cursor: pointer;
+    box-shadow: .4rem .4rem .8rem #c8d0e7,-.4rem -.4rem .8rem #fff;
+  }
+  img{
+    width: 50%;
+    height: 50%;
+    z-index: 4;
+  }
+
+  .good_water-1, .good_water-2 {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0 ;
+    filter: blur(1px);
+  }
+  .good_water-1 {
+    box-shadow: 4px 4px 8px #c8d0e7, 
+    -4px -4px 8px #fff;
+    animation: waves 2s linear;
+  }
+  .good_water-2 {
+    box-shadow: 4px 4px 8px #c8d0e7, 
+    -4px -4px 8px #fff;
+    animation: waves 2s linear 1s;
+  }
+  @keyframes waves {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      transform: scale(2);
+      opacity: 0;
+    }
+  }
+
+}
