@@ -7,7 +7,7 @@ export default forwardRef(( props , ref) => {
     let itemBox = useRef();
     let timer = useRef(null);
     useEffect(()=>{
-        console.log(itemBox , "itemBox");
+        // console.log(itemBox , "itemBox");
         function doWaterMark(width, height, content) { 
             let box = document.getElementById("watermark-box"); 
             if( !box ){

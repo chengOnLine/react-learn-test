@@ -13,7 +13,7 @@ const mockRegister = (params) => request({
 })
 
 const getUserList = () => request({
-    url:"user/list",
+    url:"/user/list",
     method:"get",
 })
 

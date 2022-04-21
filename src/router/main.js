@@ -12,7 +12,7 @@ import FunCSS from "../pages/funCss/";
 import {CacheRoute,CacheSwitch} from 'react-router-cache-route'
 import waterMark from "../pages/funCss/watermark";
 import LazyLoading from "../pages/lazyLoading";
-
+import LiftCycle from "../pages/liftCycle";
 // 列表 详情页 测试缓存组件
 import List from "../pages/fileManagement/index";
 import Detail from "../pages/fileManagement/detail";
@@ -37,7 +37,9 @@ export default () => (
       <Route exact path="/fileManagement/detail" component={Detail}></Route>
 
       <Route exact path="/mockLogin" component={MockLogin}></Route>
-      <Route exact path="/lazyLoading" component={LazyLoading}></Route>
+      {/* <Route exact path="/lazyLoading" component={LazyLoading}></Route> */}
+
+      <Route exact path="/lifeCycle" component={LiftCycle}></Route>
       {/* <Route exact path="/react" component={ReactAPI}></Route> */}
     </CacheSwitch>
 );

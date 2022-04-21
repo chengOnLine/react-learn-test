@@ -4,9 +4,9 @@ import Redux from "../test/redux";
 import Context from "../test/context";
 import ReactRedux from "../test/react-redux";
 import {Provider} from "../../context";
-import { Button } from "_antd@4.13.0@antd";
 import ItemBox from "../../components/itemBox";
 import axios from "axios";
+import { Button } from "antd";
 
 class Home extends React.Component{
     constructor(props){

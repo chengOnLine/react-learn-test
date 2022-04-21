@@ -1,6 +1,6 @@
 import React from "react";
 import style from "./index.scss";
-import { Table , Button , Form , Input} from "_antd@4.13.0@antd";
+import { Table , Button , Form , Input} from "antd";
 import mockRequest from "../mockLogin/mockRequest";
 const { Item } = Form;
 const data = [

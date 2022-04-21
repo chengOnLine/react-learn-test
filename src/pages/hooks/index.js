@@ -17,7 +17,6 @@ function TestEffect(props) {
     const msg = useRef("hello world")
     const [state, setState] = useState(0)
     useEffect( ()=>{
-        console.log("msg",msg)
         delay();
         if(state === 12){
             setState(2);
@@ -36,7 +35,6 @@ function TestLayoutEffect(props) {
     const [state, setState] = useState(0)
 
     useLayoutEffect( ()=>{
-        // console.log("layouteffect")
         delay();
         if(state === 12){
             setState(2);

@@ -8,7 +8,7 @@ import CssMiddle from "./test/cssMiddle";
 import MyPromise from "./test/script/MyPromise";
 import TearJSByHand from "./test/script/TearJSByHand";
 import {Provider} from "../context";
-import { Button } from "_antd@4.13.0@antd";
+import { Button } from "antd";
 
 class Home extends React.Component{
     constructor(props){

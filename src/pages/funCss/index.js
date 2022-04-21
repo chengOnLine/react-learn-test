@@ -12,7 +12,7 @@ export default forwardRef(( props , ref) => {
     const [ wordBreak , setWordBreak] = useState("normal");
     const [ wordWrap , setWordWrap] = useState("normal");
     useEffect(()=>{
-        console.log(itemBox , "itemBox");
+        // console.log(itemBox , "itemBox");
         function doWaterMark(width, height, content) { 
             let box = document.getElementById("watermark-box"); 
             if( !box ){

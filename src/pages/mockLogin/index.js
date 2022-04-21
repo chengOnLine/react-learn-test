@@ -68,16 +68,7 @@ function MockLogin(props) {
 
     return (
         <div>
-            <ItemBox>
-                <ItemBox>
-                  1
-                </ItemBox>
-                <ItemBox>
-                  2
-                </ItemBox>
-                {/* <div>1</div> */}
-            </ItemBox>
-            {/* <ItemBox title="mockLogin">
+            <ItemBox title="mockLogin">
                 <Form 
                     form = {form}
                     {...layout}
@@ -144,7 +135,7 @@ function MockLogin(props) {
                         })
                     } 
                 </ul>
-            </ItemBox> */}
+            </ItemBox>
         </div>
     )
 }
